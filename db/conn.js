@@ -1,8 +1,7 @@
 const mongoose = require("mongoose");
-
 const DB = process.env.DATABASE
 
-export const connectDB = async () => {
+const connectDB = async () => {
     try {
         mongoose.set('strictQuery', false);
         await mongoose.connect(DB, {
@@ -11,7 +10,7 @@ export const connectDB = async () => {
         });
         console.log('MongoDB Connected...');
     } catch (err) {
-        console.error(err);
+        console.log(err);
     }
 
 //     mongoose.connect(DB,{
