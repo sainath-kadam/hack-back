@@ -15,6 +15,7 @@ const DB = process.env.DATABASE;
 
 
     mongoose.connect(DB,{
+         mongoose.set('strictQuery', false);
     useUnifiedTopology: true,
     useNewUrlParser: true
 }).then(()=> console.log("DataBase Connected")).catch((err)=>{
